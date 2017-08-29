@@ -28,6 +28,7 @@ I largely relied on trial and error for all the parameters, adjusting one while 
 * 34.27 Seconds to train SVC...
 * Test Accuracy of SVC =  0.9924
 
+
 # [Rubric 2] Sliding Window Search
 
 ### 2.1 Describe how (and identify where in your code) you implemented a sliding window search. How did you decide what scales to search and how much to overlap windows?
@@ -50,6 +51,7 @@ I chose a window sizes (64, 64) with overlap of (0.5, 0.5)). 64x64 does a pretty
 * See python notebook for images
 * Classifer performance was optimized by adjusting the region of interest to a narrower 'y-span'.  I also adjusted the overlap to 0.5.
 
+
 # [Rubric 3] Video Implementation
 
 ### 3.1 Provide a link to your final video output. Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
@@ -58,7 +60,9 @@ Output video named 'project_video_output.mp4'
 
 ### 3.2 Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 >> Code is in cell [23] & [26]
-* I implemented a thresholded Heatmap filter to and layered 5 heatmaps to to filter false positives.
+* I implemented a thresholded Heatmap filter to and layered 10 heatmaps to to filter false positives.
+* I have some false positives so to resolve these problems I increased the threshold and change scales from 1.0 to 1.5.
+* I also tried to running HOG on all channels and YCrCb colorspace
 
 
 # [Rubric 4] Discussion
